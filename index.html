@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icons/calendar.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/styleM.css">
+    <link rel="stylesheet" href="css/styleShow.css">
+    <link rel="stylesheet" href="css/styleAddChange.css">
+    <title>Daily planner</title>
+</head>
+<body>
+    <div class="mainTable">
+        <table id="calendar2">
+            <thead>
+                <tr id="headTr"><td>
+                    <img src="icons/back.png" height="50px">
+                    </td>
+                    <div class="d">
+                        <td colspan="2" style="text-align:right"></td>
+                        <td colspan="3" style="text-align:center"></td>
+                    </div>
+                    
+                    <td>
+                    <img src="icons/ahead.png" height="50px">
+                    </td>
+                </tr>
+                <div class="head">
+                    <tr>
+                        <td>Пн</td>
+                        <td>Вт</td>
+                        <td>Ср</td>
+                        <td>Чт</td>
+                        <td>Пт</td>
+                        <td>Сб</td>
+                        <td>Вс</td>
+                    </tr>
+                </div>
+            </thead>
+            <tbody>
+          </table>
+    </div>
+    <div class="formAdd" id="formAdd" style="display:none">
+        <div class="formAddAll">
+            <div class="close">
+                <div class="closeBut" id="closeAdd">
+                    <img src="icons/close.ico" height="25px">
+                </div>
+            </div>
+            <div class="FormTitle">Добавление события</div>
+            <div class="FormEvent">
+                <div class="InfoPAdd" id="title">
+                    <div>Название:</div>
+                    <textarea name="Title" id="titleText" cols="40" rows="2"></textarea>
+                    <div id="errorTitle" style="display:none">Введите название события!</div>
+                </div>
+                <div class="InfoPAdd" id="place">
+                    <div>Место:</div>
+                    <textarea name="Place" id="placeText" cols="40" rows="2"></textarea>
+                </div>
+                <div class="InfoPAdd" id="time">
+                    <div>Время:</div>
+                    <input type="time" id="timeText"/>
+                </div>
+                <div class="InfoPAdd" id="people">
+                    <div>Участники:</div>
+                    <textarea name="People" id="peopleText" cols="40" rows="3"></textarea>
+                </div>
+                <div class="InfoPAdd" id="info">
+                    <div>Дополнительная информация:</div>
+                    <textarea name="Info" id="infoText" cols="40" rows="4"></textarea>
+                </div>
+                <div class="addInfo">
+                    <button type="button" id="addInfo" onclick="Add()">Добавить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="formChange" id="formChange" style="display:none">
+        <div class="formChangeAll">
+            <div class="close">
+                <div class="closeBut" id="closeChange">
+                    <img src="icons/close.ico" height="25px">
+                </div>
+            </div>
+            <div class="FormTitle">Изменение события</div>
+            <div class="FormEvent">
+                <div class="InfoPСhange" id="titleC">
+                    <div>Название:</div>
+                    <textarea name="Title" id="titleTextC" cols="40" rows="2"></textarea>
+                    <div id="errorTitleC" style="display:none">Введите название события!</div>
+                </div>
+                <div class="InfoPСhange" id="placeC">
+                    <div>Место:</div>
+                    <textarea name="Place" id="placeTextC" cols="40" rows="2"></textarea>
+                </div>
+                <div class="InfoPСhange" id="timeC">
+                    <div>Время:</div>
+                    <input type="time" id="timeTextC"/>
+                </div>
+                <div class="InfoPСhange" id="peopleC">
+                    <div>Участники:</div>
+                    <textarea name="People" id="peopleTextC" cols="40" rows="3"></textarea>
+                </div>
+                <div class="InfoPСhange" id="infoC">
+                    <div>Дополнительная информация:</div>
+                    <textarea name="Info" id="infoTextC" cols="40" rows="4"></textarea>
+                </div>
+                <div class="changeInfo">
+                    <button type="button" id="changeInfo" onclick="Change()">Изменить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="formShow"id="formShow" style="display:none">
+        <div class="formShowAll">
+            <div class="closeBut" id="closeShow">
+                <img src="icons/close.ico" height="25px">
+            </div>
+            <div class="DateNow" id="DateNow"></div>
+            <div id="text">пусто</div>
+            <div class="dinamicNotes" id="dinamicNotes"></div>
+            <div class="addBut" id="addBut">
+                <img src="icons/add.ico" height="40px"width="40px" >
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/DataBase.js"></script>
+    <script src="js/Calendar.js"></script>
+    <script src="js/FormAdd.js"></script>
+    <script src="js/FormChange.js"></script>
+    <script src="js/FormShow.js"></script>
+</body>
+</html>

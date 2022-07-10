@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body{
+    background: radial-gradient(circle, rgba(165,245,157,1) 0%, rgba(107,210,222,1) 100%);
+}
+#calendar2 {
+    width: 80%;
+    line-height: 30px;
+    font-size: 24px;
+    table-layout: fixed;
+    font-weight: bold;
+    margin-top: 25px;
+}
+#calendar2 thead tr:last-child {
+    font-size: 24px;
+    color: rgb(85, 85, 85);
+}
+#calendar2 thead tr:nth-child(1) td:nth-child(2) td:nth-child(3) {
+    color: rgb(50, 50, 50);
+}
+#calendar2 thead tr:nth-child(1) td:nth-child(1):hover, #calendar2 thead tr:nth-child(1) td:nth-child(4):hover {
+    cursor: pointer;
+}
+#calendar2 tbody td {
+    color: rgb(44, 86, 122);
+}
+#calendar2 tbody td:hover{
+    background: #bfdada;
+}
+#calendar2 tbody td:nth-child(n+6), #calendar2 .holiday {
+    color: rgb(231, 140, 92);
+}
+#calendar2 tbody td.today {
+    border:2px double #449576;
+    background: none;
+}
+#calendar2 tbody td.today:hover {
+    background: #449576;
+}
+tbody td{
+    background: #F0FFFF;
+    border-radius: 5px; 
+    height: 70px;
+}
+.mainTable{
+    display: flex;
+    text-align:center;
+    justify-content: center;
+    align-items: center;
+}
+.d{
+    text-align: center;
+}
+textarea{
+    margin: 5px 0;
+    resize: none;
+    outline: none;
+    -moz-appearance: none;
+}
+textarea:focus{
+    border: 1px solid rgb(116, 186, 193);
+}

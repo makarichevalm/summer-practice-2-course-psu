@@ -1,0 +1,73 @@
+.formAdd, .formChange {
+    width:100%;
+    min-height:100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    z-index: 2;
+    top:0px;
+}
+.formAddAll, .formChangeAll{
+    margin:40px auto 0px auto;
+    width:350px;
+    height: 500px;
+    padding:10px;
+    background-color: #e6ebeb;
+    border-radius:10px;
+    box-shadow: 0px 0px 10px #000;
+}
+.FormTitle{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(44, 86, 122);
+}
+.addInfo, .changeInfo{
+    margin: 10px;
+    text-align: center;
+}
+#addInfo, #changeInfo{
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color:rgb(116, 186, 193);
+    border: 2px solid rgb(116, 186, 193);
+    color: rgb(44, 86, 122);
+}
+#addInfo:hover, #changeInfo:hover{
+    background: #bfdada;
+}
+.InfoPAdd{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.InfoPСhange{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.InfoPAdd div{
+    color: rgb(44, 86, 122);
+}
+.InfoPСhange div{
+    color: rgb(44, 86, 122);
+}
+.InfoPAdd input, .InfoPChange input{
+    margin: 5px 0;
+    outline: none;
+}
+.InfoPAdd input:focus, .InfoPChange input:focus{
+    border: 1px solid rgb(116, 186, 193);
+}
+#errorTitle{
+    color:rgb(231, 140, 92);
+    font-size: 16px;
+}
+#errorTitleC{
+    color:rgb(231, 140, 92);
+    font-size: 16px;
+}
