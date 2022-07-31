@@ -1,4 +1,5 @@
 let db;
+let changeNote;
 let index; //индекс для поиска по дате
 let notes;
 let note;

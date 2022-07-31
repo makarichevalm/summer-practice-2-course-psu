@@ -62,3 +62,6 @@ textarea{
 textarea:focus{
     border: 1px solid rgb(116, 186, 193);
 }
+.haveNotes{
+    border: 2px solid #449576;
+}

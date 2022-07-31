@@ -49,13 +49,7 @@ function Change() {
         document.getElementById('formChange').style.display = 'none';
     };
     transact.onerror = (event) => {
-        if (
-            !confirm(
-                `Событие ${note.title} уже есть` +
-                    'error storing note ' +
-                    event.target.errorCode
-            )
-        ) {
+        if (!confirm(`Событие ${note.title} уже есть `)) {
             document.getElementById('formChange').style.display = 'none';
         }
     };

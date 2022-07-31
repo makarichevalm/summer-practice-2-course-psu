@@ -1,6 +1,8 @@
+//let dataForBase = [];
 var dateDay; // дата-подпись календаря
 var dateYear; // год-подпись календаря
 function Calendar(id, year, month) {
+    //dataForBase = [];
     var Dlast = new Date(year, month + 1, 0).getDate(),
         D = new Date(year, month, Dlast),
         DNlast = new Date(D.getFullYear(), D.getMonth(), Dlast).getDay(),
@@ -75,20 +77,21 @@ function Calendar(id, year, month) {
                 GetNote(dateDay);
             }
         });
-        if (cells[i].innerHTML != '' && cells[i].innerHTML != '&nbsp;') {
-            /*let res = ShowInHtml(
+        /*if (cells[i].innerHTML != '' && cells[i].innerHTML != '&nbsp;') {
+            console.log('cell ', i);
+            let res = ShowInHtml(
                 cells[i].innerHTML + ' ' + getKeyByValue(month, m.innerHTML)
             );
             console.log(res);
-            if (res === 1) {
-                cells[i].style.border = '2px solid #449576;';
+            if (res == 1) {
+                cells[i].style.border = '2px solid #449576';
             } else {
                 cells[i].style.border = '';
             }
-            //dataForBase.push(
-            //cells[i].innerHTML + ' ' + getKeyByValue(month, m.innerHTML)
-            //);*/
-        }
+            dataForBase.push(
+                cells[i].innerHTML + ' ' + getKeyByValue(month, m.innerHTML)
+            );
+        }*/
     }
     //console.log(dataForBase);
     //ShowInHtml(dataForBase);
@@ -131,22 +134,24 @@ function getKeyByValue(object, value) {
 //выделение ячеек с данными
 function ShowInHtml(cell) {
     console.log(cell);
-    //dbReq.onsuccess = function (event) {
-    let tr = db.transaction('notes', 'readwrite');
-    let store = tr.objectStore('notes');
-    let dayInd = store.index('day_idx');
-    let find = dayInd.get(cell);
-    console.log(find);
-    find.onsuccess = function () {
-        //console.log(find.result.length);
-        //return find.result.length !== 0 ? 1 : 0;
-        if (find.result !== undefined) {
+    dbReq.onsuccess = function (event) {
+        db = event.target.result;
+        let tr = db.transaction('notes', 'readwrite');
+        let store = tr.objectStore('notes');
+        let dayInd = store.index('day_idx');
+        let find = dayInd.get(cell);
+        console.log(find);
+        find.onsuccess = function () {
             console.log(find.result);
-        } else console.log('no');
-        // return 1;
-        //} else {
-        // return 0;
-        //}
-        // };
+            //return find.result;
+            //return find.result.length !== 0 ? 1 : 0;
+            if (find.result !== undefined) {
+                console.log(find.result);
+                //} else console.log('no');
+                return 1;
+            } else {
+                return 0;
+            }
+        };
     };
 }

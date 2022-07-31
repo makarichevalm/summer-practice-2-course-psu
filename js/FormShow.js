@@ -23,6 +23,8 @@ function EditNote(title) {
             let key = cursor.key;
             let val = cursor.value;
             console.log(key, val);
+            changeNote = val;
+            console.log(changeNote);
             document.getElementById('titleTextC').value = val.title;
             document.getElementById('placeTextC').value = val.place;
             document.getElementById('timeTextC').value = val.time;
